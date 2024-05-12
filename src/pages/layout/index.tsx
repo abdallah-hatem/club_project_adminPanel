@@ -13,7 +13,6 @@ import { setUserItem } from '@/stores/user.store';
 import { getFirstPathCode } from '@/utils/getFirstPathCode';
 import { getGlobalState } from '@/utils/getGloabal';
 
-import { useGuide } from '../guide/useGuide';
 import HeaderComponent from './header';
 import MenuComponent from './menu';
 import TagsView from './tagView';
@@ -31,7 +30,6 @@ const LayoutPage: FC = () => {
 
   const isMobile = device === 'MOBILE';
   const dispatch = useDispatch();
-  const { driverStart } = useGuide();
 
   useEffect(() => {
     const code = getFirstPathCode(location.pathname);
@@ -95,10 +93,6 @@ const LayoutPage: FC = () => {
       );
     };
   }, [dispatch]);
-
-  useEffect(() => {
-    newUser && driverStart();
-  }, [newUser]);
 
   return (
     <Layout className="layout-page">

@@ -3,168 +3,186 @@ import type { MenuList } from '@/interface/layout/menu.interface';
 import { intercepter, mock } from '../config';
 
 const mockMenuList: MenuList = [
+  // Dashboard
+  // {
+  //   code: 'dashboard',
+  //   label: {
+  //     zh_CN: '首页',
+  //     en_US: 'Dashboard',
+  //   },
+  //   icon: 'dashboard',
+  //   path: '/dashboard',
+  // },
+  // Category
   {
-    code: 'dashboard',
+    code: 'categories',
     label: {
       zh_CN: '首页',
-      en_US: 'Dashboard',
+      en_US: 'Categories',
     },
     icon: 'dashboard',
-    path: '/dashboard',
-  },
-  {
-    code: 'documentation',
-    label: {
-      zh_CN: '文档',
-      en_US: 'Documentation',
-    },
-    icon: 'documentation',
-    path: '/documentation',
-  },
-  {
-    code: 'guide',
-    label: {
-      zh_CN: '引导',
-      en_US: 'Guide',
-    },
-    icon: 'guide',
-    path: '/guide',
-  },
-  {
-    code: 'permission',
-    label: {
-      zh_CN: '权限',
-      en_US: 'Permission',
-    },
-    icon: 'permission',
-    path: '/permission',
+    path: '/categories',
     children: [
       {
-        code: 'routePermission',
+        code: 'categories',
         label: {
           zh_CN: '路由权限',
-          en_US: 'Route Permission',
+          en_US: 'Categories',
         },
-        path: '/permission/route',
+        path: '/categories',
       },
       {
-        code: 'notFound',
+        code: 'addCategory',
         label: {
-          zh_CN: '404',
-          en_US: '404',
+          zh_CN: '路由权限',
+          en_US: 'Add Category',
         },
-        path: '/permission/404',
-      },
-    ],
-  },
-  {
-    code: 'component',
-    label: {
-      zh_CN: '组件',
-      en_US: 'Component',
-    },
-    icon: 'permission',
-    path: '/component',
-    children: [
-      {
-        code: 'componentForm',
-        label: {
-          zh_CN: '表单',
-          en_US: 'Form',
-        },
-        path: '/component/form',
-      },
-      {
-        code: 'componentTable',
-        label: {
-          zh_CN: '表格',
-          en_US: 'Table',
-        },
-        path: '/component/table',
-      },
-      {
-        code: 'componentSearch',
-        label: {
-          zh_CN: '查询',
-          en_US: 'Search',
-        },
-        path: '/component/search',
-      },
-      {
-        code: 'componentAside',
-        label: {
-          zh_CN: '侧边栏',
-          en_US: 'Aside',
-        },
-        path: '/component/aside',
-      },
-      {
-        code: 'componentTabs',
-        label: {
-          zh_CN: '选项卡',
-          en_US: 'Tabs',
-        },
-        path: '/component/tabs',
-      },
-      {
-        code: 'componentRadioCards',
-        label: {
-          zh_CN: '单选卡片',
-          en_US: 'Radio Cards',
-        },
-        path: '/component/radio-cards',
+        path: '/categories/addCategory',
       },
     ],
   },
 
+  // Activity
   {
-    code: 'business',
+    code: 'activities',
     label: {
-      zh_CN: '业务',
-      en_US: 'Business',
+      zh_CN: '首页',
+      en_US: 'Activities',
     },
-    icon: 'permission',
-    path: '/business',
+    icon: 'activities',
+    path: '/activities',
     children: [
       {
-        code: 'basic',
+        code: 'activities',
         label: {
-          zh_CN: '基本',
-          en_US: 'Basic',
+          zh_CN: '路由权限',
+          en_US: 'activities',
         },
-        path: '/business/basic',
+        path: '/activities',
       },
       {
-        code: 'withSearch',
+        code: 'addActivity',
         label: {
-          zh_CN: '带查询',
-          en_US: 'WithSearch',
+          zh_CN: '路由权限',
+          en_US: 'Add Activity',
         },
-        path: '/business/with-search',
+        path: '/activities/addActivity',
+      },
+    ],
+  },
+
+  // Package Item
+  {
+    code: 'packageItems',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Package Items',
+    },
+    icon: 'packageItems',
+    path: '/packageItems',
+    children: [
+      {
+        code: 'packageItems',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Package Items',
+        },
+        path: '/packageItems',
       },
       {
-        code: 'withAside',
+        code: 'addPackageItem',
         label: {
-          zh_CN: '带侧边栏',
-          en_US: 'WithAside',
+          zh_CN: '路由权限',
+          en_US: 'Add PackageItem',
         },
-        path: '/business/with-aside',
+        path: '/packageItems/addPackageItem',
+      },
+    ],
+  },
+
+  // Age
+  {
+    code: 'ages',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Ages',
+    },
+    icon: 'ages',
+    path: '/ages',
+    children: [
+      {
+        code: 'ages',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Ages',
+        },
+        path: '/ages',
       },
       {
-        code: 'withRadioCard',
+        code: 'addAge',
         label: {
-          zh_CN: '带单选卡片',
-          en_US: 'With Nav Tabs',
+          zh_CN: '路由权限',
+          en_US: 'Add Age',
         },
-        path: '/business/with-radio-cards',
+        path: '/ages/addAge',
+      },
+    ],
+  },
+
+  // Package
+  {
+    code: 'packages',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Packages',
+    },
+    icon: 'packages',
+    path: '/packages',
+    children: [
+      {
+        code: 'packages',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Packages',
+        },
+        path: '/packages',
       },
       {
-        code: 'withTabs',
+        code: 'addPackage',
         label: {
-          zh_CN: '带选项卡',
-          en_US: 'With Tabs',
+          zh_CN: '路由权限',
+          en_US: 'Add Package',
         },
-        path: '/business/with-tabs',
+        path: '/packages/addPackages',
+      },
+    ],
+  },
+
+  // Admin
+  {
+    code: 'admin',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Admin',
+    },
+    icon: 'admin',
+    path: '/admin',
+    children: [
+      {
+        code: 'users',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Users',
+        },
+        path: '/users',
+      },
+      {
+        code: 'roles',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Roles',
+        },
+        path: '/roles',
       },
     ],
   },

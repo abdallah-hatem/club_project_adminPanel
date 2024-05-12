@@ -42,9 +42,9 @@ new Array(30).fill(undefined).forEach((item, index) => {
   });
 });
 
-mock.mock(/\/business\/list*/, 'get', (config: any) => {
-  const jsonParams = config.url.split('?')[1];
-  const params = qs.parse(jsonParams);
+// mock.mock(/\/business\/list*/, 'get', (config: any) => {
+//   const jsonParams = config.url.split('?')[1];
+//   const params = qs.parse(jsonParams);
 
-  return intercepter(data, params);
-});
+//   return intercepter(data, params);
+// });

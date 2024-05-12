@@ -5,29 +5,29 @@ import { lazy } from 'react';
 import { Navigate } from 'react-router';
 import { useRoutes } from 'react-router-dom';
 
+import Activities from '@/pages/activities';
+import AddActivity from '@/pages/activities/addActivity';
+import UpdateActivity from '@/pages/activities/updateActivity';
+import Roles from '@/pages/admin/roles';
+import UpdateRole from '@/pages/admin/updateRole';
+import Users from '@/pages/admin/users';
+import Ages from '@/pages/ages';
+import AddAge from '@/pages/ages/addAge';
+import UpdateAge from '@/pages/ages/updateAge';
+import Categories from '@/pages/categories';
+import AddCategory from '@/pages/categories/addCategory';
+import UpdateCategory from '@/pages/categories/updateCategory';
 import Dashboard from '@/pages/dashboard';
 import LayoutPage from '@/pages/layout';
 import LoginPage from '@/pages/login';
+import PackageItems from '@/pages/packageItems';
+import AddPackageItem from '@/pages/packageItems/addPackageItem';
+import UpdatePackageItem from '@/pages/packageItems/updatePackageItem';
+import Packages from '@/pages/packages';
+import AddPackage from '@/pages/packages/addPackage';
+import UpdatePackage from '@/pages/packages/updatePackage';
 
 import WrapperRouteComponent from './config';
-
-const NotFound = lazy(() => import(/* webpackChunkName: "404'"*/ '@/pages/404'));
-const Documentation = lazy(() => import(/* webpackChunkName: "404'"*/ '@/pages/doucumentation'));
-const Guide = lazy(() => import(/* webpackChunkName: "guide'"*/ '@/pages/guide'));
-const RoutePermission = lazy(() => import(/* webpackChunkName: "route-permission"*/ '@/pages/permission/route'));
-const FormPage = lazy(() => import(/* webpackChunkName: "form'"*/ '@/pages/components/form'));
-const TablePage = lazy(() => import(/* webpackChunkName: "table'"*/ '@/pages/components/table'));
-const SearchPage = lazy(() => import(/* webpackChunkName: "search'"*/ '@/pages/components/search'));
-const TabsPage = lazy(() => import(/* webpackChunkName: "tabs'"*/ '@/pages/components/tabs'));
-const AsidePage = lazy(() => import(/* webpackChunkName: "aside'"*/ '@/pages/components/aside'));
-const RadioCardsPage = lazy(() => import(/* webpackChunkName: "radio-cards'"*/ '@/pages/components/radio-cards'));
-const BusinessBasicPage = lazy(() => import(/* webpackChunkName: "basic-page" */ '@/pages/business/basic'));
-const BusinessWithSearchPage = lazy(() => import(/* webpackChunkName: "with-search" */ '@/pages/business/with-search'));
-const BusinessWithAsidePage = lazy(() => import(/* webpackChunkName: "with-aside" */ '@/pages/business/with-aside'));
-const BusinessWithRadioCardsPage = lazy(
-  () => import(/* webpackChunkName: "with-aside" */ '@/pages/business/with-radio-cards'),
-);
-const BusinessWithTabsPage = lazy(() => import(/* webpackChunkName: "with-tabs" */ '@/pages/business/with-tabs'));
 
 const routeList: RouteObject[] = [
   {
@@ -46,65 +46,88 @@ const routeList: RouteObject[] = [
         path: 'dashboard',
         element: <WrapperRouteComponent element={<Dashboard />} titleId="title.dashboard" />,
       },
+
+      ///////////////// Categories /////////////////
       {
-        path: 'documentation',
-        element: <WrapperRouteComponent element={<Documentation />} titleId="title.documentation" />,
+        path: 'categories',
+        element: <WrapperRouteComponent element={<Categories />} titleId="title.categories" auth />,
       },
       {
-        path: 'guide',
-        element: <WrapperRouteComponent element={<Guide />} titleId="title.guide" />,
+        path: 'categories/addCategory',
+        element: <WrapperRouteComponent element={<AddCategory />} titleId="title.addcategory" auth />,
       },
       {
-        path: 'permission/route',
-        element: <WrapperRouteComponent element={<RoutePermission />} titleId="title.permission.route" auth />,
+        path: 'categories/updateCategory/:id',
+        element: <WrapperRouteComponent element={<UpdateCategory />} titleId="title.updateCategory" auth />,
+      },
+
+      ///////////////// Activities /////////////////
+      {
+        path: 'activities',
+        element: <WrapperRouteComponent element={<Activities />} titleId="title.activities" auth />,
       },
       {
-        path: 'component/form',
-        element: <WrapperRouteComponent element={<FormPage />} titleId="title.account" />,
+        path: 'activities/addActivity',
+        element: <WrapperRouteComponent element={<AddActivity />} titleId="title.addActivity" auth />,
       },
       {
-        path: 'component/table',
-        element: <WrapperRouteComponent element={<TablePage />} titleId="title.account" />,
+        path: 'activities/updateActivity/:id',
+        element: <WrapperRouteComponent element={<UpdateActivity />} titleId="title.updateActivity" auth />,
+      },
+
+      ///////////////// PackageItems /////////////////
+      {
+        path: 'packageItems',
+        element: <WrapperRouteComponent element={<PackageItems />} titleId="title.packageItems" auth />,
       },
       {
-        path: 'component/search',
-        element: <WrapperRouteComponent element={<SearchPage />} titleId="title.account" />,
+        path: 'packageItems/addPackageItem',
+        element: <WrapperRouteComponent element={<AddPackageItem />} titleId="title.addPackageItem" auth />,
       },
       {
-        path: 'component/tabs',
-        element: <WrapperRouteComponent element={<TabsPage />} titleId="title.account" />,
+        path: 'packageItems/updatePackageItem/:id',
+        element: <WrapperRouteComponent element={<UpdatePackageItem />} titleId="title.updatePackageItem" auth />,
+      },
+      ///////////////// Packages /////////////////
+      {
+        path: 'packages',
+        element: <WrapperRouteComponent element={<Packages />} titleId="title.packages" auth />,
       },
       {
-        path: 'component/aside',
-        element: <WrapperRouteComponent element={<AsidePage />} titleId="title.account" />,
+        path: 'packages/addPackages',
+        element: <WrapperRouteComponent element={<AddPackage />} titleId="title.addPackage" auth />,
       },
       {
-        path: 'component/radio-cards',
-        element: <WrapperRouteComponent element={<RadioCardsPage />} titleId="title.account" />,
+        path: 'packages/updatePackage/:id',
+        element: <WrapperRouteComponent element={<UpdatePackage />} titleId="title.updatePackage" auth />,
+      },
+      ///////////////// Ages /////////////////
+      {
+        path: 'ages',
+        element: <WrapperRouteComponent element={<Ages />} titleId="title.ages" auth />,
       },
       {
-        path: 'business/basic',
-        element: <WrapperRouteComponent element={<BusinessBasicPage />} titleId="title.account" />,
+        path: 'ages/addAge',
+        element: <WrapperRouteComponent element={<AddAge />} titleId="title.addAge" auth />,
       },
       {
-        path: 'business/with-search',
-        element: <WrapperRouteComponent element={<BusinessWithSearchPage />} titleId="title.account" />,
+        path: 'ages/updateAge/:id',
+        element: <WrapperRouteComponent element={<UpdateAge />} titleId="title.updateAge" auth />,
+      },
+
+      ///////////////// Admin /////////////////
+
+      {
+        path: 'users',
+        element: <WrapperRouteComponent element={<Users />} titleId="title.users" auth />,
       },
       {
-        path: 'business/with-aside',
-        element: <WrapperRouteComponent element={<BusinessWithAsidePage />} titleId="title.account" />,
+        path: 'roles',
+        element: <WrapperRouteComponent element={<Roles />} titleId="title.roles" auth />,
       },
       {
-        path: 'business/with-radio-cards',
-        element: <WrapperRouteComponent element={<BusinessWithRadioCardsPage />} titleId="title.account" />,
-      },
-      {
-        path: 'business/with-tabs',
-        element: <WrapperRouteComponent element={<BusinessWithTabsPage />} titleId="title.account" />,
-      },
-      {
-        path: '*',
-        element: <WrapperRouteComponent element={<NotFound />} titleId="title.notFount" />,
+        path: 'role/:id',
+        element: <WrapperRouteComponent element={<UpdateRole />} titleId="title.updateRole" auth />,
       },
     ],
   },

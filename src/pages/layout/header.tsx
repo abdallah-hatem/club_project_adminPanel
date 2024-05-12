@@ -77,8 +77,8 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
     <Header className="layout-page-header bg-2" style={{ backgroundColor: token.token.colorBgContainer }}>
       {device !== 'MOBILE' && (
         <div className="logo" style={{ width: collapsed ? 80 : 200 }}>
-          <img src={ReactSvg} alt="" style={{ marginRight: collapsed ? '2px' : '20px' }} />
-          <img src={AntdSvg} alt="" />
+          {/* <img src={ReactSvg} alt="" style={{ marginRight: collapsed ? '2px' : '20px' }} /> */}
+          <img src={'https://www.alahlyegypt.com/assets/images/new-logo.png'} style={{ height: 50 }} alt="" />
         </div>
       )}
       <div className="layout-page-header-main">
@@ -97,8 +97,8 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
               })}
             </span>
           </Tooltip>
-          <HeaderNoticeComponent />
-          <Dropdown
+          {/* <HeaderNoticeComponent /> */}
+          {/* <Dropdown
             menu={{
               onClick: info => selectLocale(info),
               items: [
@@ -120,7 +120,7 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
             <span>
               <LanguageSvg id="language-change" />
             </span>
-          </Dropdown>
+          </Dropdown> */}
 
           {logged ? (
             <Dropdown

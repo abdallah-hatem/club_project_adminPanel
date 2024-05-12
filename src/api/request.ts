@@ -80,6 +80,8 @@ export type Response<T = any> = {
 
 export type MyResponse<T = any> = Promise<Response<T>>;
 
+export const ApiBaseUrl = 'https://trueodysseysapi.bitnata.com/api/';
+
 /**
  *
  * @param method - request methods
@@ -97,12 +99,24 @@ export const request = <T = any>(
 
   url = prefix + url;
 
+  const configPost = {
+    headers: {
+      // Authorization: `Bearer ${localStorage.getItem('t')}`,
+      Authorization: `Bearer R0cPofvtAKGRcxPLtX1SJHHujijbfXRXgb03E-bm7zE`,
+    },
+    ...config,
+  };
+
   if (method === 'post') {
-    return axiosInstance.post(url, data, config);
+    return axiosInstance.post(url, data, configPost);
+  } else if (method === 'put') {
+    return axiosInstance.put(url, data, configPost);
+  } else if (method === 'delete') {
+    return axiosInstance.delete(url, configPost);
   } else {
     return axiosInstance.get(url, {
       params: data,
-      ...config,
+      ...configPost,
     });
   }
 };

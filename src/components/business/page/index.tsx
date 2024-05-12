@@ -37,6 +37,8 @@ export interface PageProps<S> {
   asideTreeItemRender?: MyAsideProps['titleRender'];
   tabsData?: MyTabsOption[];
   tabsValue?: string | number;
+  action?: boolean;
+  onRowClick?: (record: any) => void;
 }
 
 export interface RefPageProps {
@@ -59,6 +61,8 @@ const BasePage = <S extends SearchApi>(props: PageProps<S>, ref: React.Ref<RefPa
     radioCardsValue,
     tabsData,
     tabsValue,
+    action,
+    onRowClick,
   } = props;
   const [pageData, setPageData] = useStates<PageData<ParseDataType<S>>>({
     pageSize: 20,
@@ -87,19 +91,37 @@ const BasePage = <S extends SearchApi>(props: PageProps<S>, ref: React.Ref<RefPa
           pageNum: pageData.pageNum,
           [asideKey!]: asideCheckedKey,
         };
-        const res = await pageApi(obj);
+        let res = await pageApi(obj);
+        // const result = await pageApi(obj);
 
-        if (res.status) {
-          setPageData({ total: res.result.total, data: res.result.data });
-        }
+        res = {
+          result: {
+            data: res.result ? res.result : res,
+          },
+        };
+
+        setPageData({ total: res.result.total, data: res.result.data });
+
+        // if (res.status) {
+        //   setPageData({ total: res.result.total, data: res.result.data });
+        // }
       }
     },
     [pageApi, pageParams, pageData.pageSize, pageData.pageNum, asideKey, asideCheckedKey],
   );
 
   useEffect(() => {
-    getPageData();
-  }, [getPageData]);
+    // getPageData();
+    setTimeout(() => {
+      getPageData();
+    }, 300);
+  }, [getPageData, action]);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     getPageData();
+  //   }, 200);
+  // }, [action]);
 
   const onSearch = (searchParams: Record<string, any>) => {
     getPageData(searchParams);
@@ -149,6 +171,7 @@ const BasePage = <S extends SearchApi>(props: PageProps<S>, ref: React.Ref<RefPa
                 height="100%"
                 dataSource={pageData.data}
                 columns={tableOptions}
+                onRow={record => ({ onClick: () => onRowClick && onRowClick(record) })}
                 pagination={{
                   current: pageData.pageNum,
                   pageSize: pageData.pageSize,

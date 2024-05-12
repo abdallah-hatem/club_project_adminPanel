@@ -8,11 +8,30 @@ export interface LoginParams {
   password: string;
 }
 
+type Profile = {
+  first_name: string;
+  last_name: string;
+  name: string;
+  username: string;
+  status: string;
+  email: string;
+  email_verified_at: string;
+  inserted_at: string;
+  role_ids: number[];
+  roles: Role[];
+  id: number;
+};
+
 export interface LoginResult {
   /** auth token */
-  token: string;
+  access_token: string;
   username: string;
   role: Role;
+
+  profile: Profile;
+  token_type: string;
+  refresh_token: string;
+  expires_in: string;
 }
 
 export interface LogoutParams {

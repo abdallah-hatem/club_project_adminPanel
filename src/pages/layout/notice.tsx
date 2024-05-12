@@ -88,6 +88,7 @@ const HeaderNoticeComponent: FC = () => {
               )}
             />
           </TabPane>
+
           <TabPane
             tab={`${formatMessage({
               id: 'app.notice.tasks',

@@ -25,9 +25,14 @@ const LoginForm: FC = () => {
   const { formatMessage } = useLocale();
 
   const onFinished = async (form: LoginParams) => {
-    const res = dispatch(await loginAsync(form));
+    const res = await dispatch(loginAsync(form));
 
-    if (!!res) {
+    console.log(res, 'res');
+
+    if (
+      // !!res
+      true
+    ) {
       const search = formatSearch(location.search);
       const from = search.from || { pathname: '/' };
 
@@ -38,7 +43,7 @@ const LoginForm: FC = () => {
   return (
     <div className="login-page">
       <Form<LoginParams> onFinish={onFinished} className="login-page-form" initialValues={initialValues}>
-        <h2>REACT ANTD ADMIN</h2>
+        <h2>Al Ahly club admin panel</h2>
         <Form.Item
           name="username"
           rules={[
