@@ -1,53 +1,53 @@
-import type { CategoriesDto } from '@/interface/categories';
+import type { UploadProps } from 'antd';
 
-import { Form, message } from 'antd';
-import { useEffect, useState } from 'react';
+import { UploadOutlined } from '@ant-design/icons';
+import { Button, Form, message, Upload } from 'antd';
 
-import { ADD_ACTIVITY } from '@/api/activities';
-import { GET_CATEGORIES } from '@/api/categories';
+import { ADD_CATEGORY } from '@/api/categories';
 import MyButton from '@/components/basic/button';
 import MyForm from '@/components/core/form';
-import { typesEnum } from '@/interface/types';
 
 export default function AddActivity() {
-  const [categories, setCategories] = useState<CategoriesDto[] | null>(null);
   const [form] = Form.useForm();
-
-  const boolOptions = [
-    { value: true, label: 'Yes' },
-    { value: false, label: 'No' },
-  ];
-
-  useEffect(() => {
-    GET_CATEGORIES().then((res: any) => setCategories(res));
-  }, []);
 
   const tailLayout = {
     wrapperCol: { offset: 8, span: 16 },
   };
 
+  const props: UploadProps = {
+    name: 'file',
+    action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
+    headers: {
+      authorization: 'authorization-text',
+    },
+    onChange(info) {
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+
+      if (info.file.status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
+
   const onFinish = (value: any) => {
-    ADD_ACTIVITY(value).then(() => {
+    console.log(value);
+    ADD_CATEGORY(value).then(() => {
       message.success('Added successfully');
       form.resetFields();
     });
   };
 
   return (
-    <MyForm<any> onFinish={onFinish} form={form} layout="horizontal" labelCol={{ span: 3 }} labelAlign="left">
-      <MyForm.Item label="Activity title" required name="title" type="input" />
-      <MyForm.Item label="Short description" required name="short_description" type="input" />
-      <MyForm.Item label="Full description" required name="full_description" type="input" />
-      <MyForm.Item label="Know before you go" required name="know_before_you_go" type="input" />
-      <MyForm.Item label="Type" required name="_type" type="select" options={typesEnum} />
-      <MyForm.Item label="Includes hotel pickup ?" name="includes_hotel_pickup" type="radio" options={boolOptions} />
-      <MyForm.Item
-        label="Category"
-        required
-        name="category_id"
-        type="select"
-        options={categories?.map(item => ({ label: item.name, value: item.id }))}
-      />
+    <MyForm<any> onFinish={onFinish} form={form} layout="horizontal">
+      <MyForm.Item label="Category name" required name="name" type="input" />
+      <Upload {...props}>
+        <Button icon={<UploadOutlined />}>Click to Upload</Button>
+      </Upload>
+
       <MyForm.Item {...tailLayout}>
         <MyButton type="primary" htmlType="submit">
           Submit

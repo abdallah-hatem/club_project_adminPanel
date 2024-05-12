@@ -31,7 +31,7 @@ const LoginForm: FC = () => {
 
     if (
       // !!res
-      true
+      true // remove when api is ready
     ) {
       const search = formatSearch(location.search);
       const from = search.from || { pathname: '/' };
