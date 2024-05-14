@@ -1,6 +1,4 @@
-import { request } from './request';
-
-const ApiBaseUrl = 'https://club-project-nestjs.vercel.app';
+import { ApiBaseUrl, request } from './request';
 
 // Get fields
 export const GET_FIELDS = (params?: any) => request<any>('get', `${ApiBaseUrl}/field`, params);

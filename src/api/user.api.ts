@@ -1,8 +1,6 @@
 import type { LoginParams, LoginResult, LogoutParams, LogoutResult } from '../interface/user/login';
 
-import { request } from './request';
-
-const ApiBaseUrl = 'https://club-project-nestjs.vercel.app';
+import { ApiBaseUrl, request } from './request';
 
 // Auth
 export const apiLogin = (data: LoginParams) => request<LoginResult>('post', `${ApiBaseUrl}/auth/login`, data);

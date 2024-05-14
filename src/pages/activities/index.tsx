@@ -4,7 +4,7 @@ import { message, Space } from 'antd';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { DELETE_ACTIVITY, GET_ACTIVITIES } from '@/api/activities';
+import GET_ACTIVITIES, { DELETE_ACTIVITY } from '@/api/activities';
 import MyButton from '@/components/basic/button';
 import MyPage from '@/components/business/page';
 

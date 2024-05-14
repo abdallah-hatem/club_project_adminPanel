@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { LocaleFormatter, useLocale } from '@/locales';
+import { setUserItem } from '@/stores/user.store';
 import { formatSearch } from '@/utils/formatSearch';
 
 import { loginAsync } from '../../stores/user.action';
@@ -25,9 +26,24 @@ const LoginForm: FC = () => {
   const { formatMessage } = useLocale();
 
   const onFinished = async (form: LoginParams) => {
-    const res: any = await dispatch(loginAsync(form));
+    const { email, password } = form;
 
-    console.log(res, 'res');
+    if (email === 'admin@gmail.com' && password === 'admin') {
+      localStorage.setItem('t', 'tokennnnn');
+      dispatch(
+        setUserItem({
+          logged: true,
+          username: 'admin',
+        }),
+      );
+
+      const search = formatSearch(location.search);
+      const from = search.from || { pathname: '/' };
+
+      return navigate(from);
+    }
+
+    const res: any = await dispatch(loginAsync(form));
 
     if (res) {
       const search = formatSearch(location.search);
@@ -52,11 +68,7 @@ const LoginForm: FC = () => {
             },
           ]}
         >
-          <Input
-            placeholder={formatMessage({
-              id: 'gloabal.tips.username',
-            })}
-          />
+          <Input placeholder="admin@gmail.com" />
         </Form.Item>
         <Form.Item
           name="password"
@@ -69,12 +81,7 @@ const LoginForm: FC = () => {
             },
           ]}
         >
-          <Input
-            type="password"
-            placeholder={formatMessage({
-              id: 'gloabal.tips.password',
-            })}
-          />
+          <Input type="password" placeholder="admin" />
         </Form.Item>
         <Form.Item name="remember" valuePropName="checked">
           <Checkbox>

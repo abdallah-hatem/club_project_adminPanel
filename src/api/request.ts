@@ -78,9 +78,11 @@ export type Response<T = any> = {
   result: T;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type MyResponse<T = any> = Promise<any>;
 
-export const ApiBaseUrl = 'https://trueodysseysapi.bitnata.com/api/';
+// export const ApiBaseUrl = 'https://club-project-nestjs.vercel.app/';
+export const ApiBaseUrl = 'http://localhost:8000';
 
 /**
  *
@@ -88,6 +90,7 @@ export const ApiBaseUrl = 'https://trueodysseysapi.bitnata.com/api/';
  * @param url - request url
  * @param data - request data or params
  */
+
 export const request = <T = any>(
   method: Lowercase<Method>,
   url: string,
