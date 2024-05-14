@@ -23,6 +23,15 @@ export const enUS_title = {
   'title.users': 'Users',
   'title.roles': 'Roles',
 
+  // fields
+  'title.fields': 'Fields',
+  'title.addField': 'Add Field',
+  'title.updateField': 'Update Field',
+
+  // Users
+  'title.addUser': 'Add User',
+  'title.updateUser': 'Update User',
+
   // /////
   'title.documentation': 'Documentation',
   'title.guide': 'Guide',

@@ -53,10 +53,10 @@ axiosInstance.interceptors.response.use(
     );
     // if needs to navigate to login page when request exception
     // history.replace('/login');
-    let errorMessage = '系统异常';
+    let errorMessage = 'Error';
 
     if (error?.message?.includes('Network Error')) {
-      errorMessage = '网络错误，请检查您的网络';
+      errorMessage = 'Network Error';
     } else {
       errorMessage = error?.message;
     }
@@ -78,7 +78,7 @@ export type Response<T = any> = {
   result: T;
 };
 
-export type MyResponse<T = any> = Promise<Response<T>>;
+export type MyResponse<T = any> = Promise<any>;
 
 export const ApiBaseUrl = 'https://trueodysseysapi.bitnata.com/api/';
 
@@ -102,7 +102,7 @@ export const request = <T = any>(
   const configPost = {
     headers: {
       // Authorization: `Bearer ${localStorage.getItem('t')}`,
-      Authorization: `Bearer R0cPofvtAKGRcxPLtX1SJHHujijbfXRXgb03E-bm7zE`,
+      // Authorization: `Bearer R0cPofvtAKGRcxPLtX1SJHHujijbfXRXgb03E-bm7zE`,
     },
     ...config,
   };

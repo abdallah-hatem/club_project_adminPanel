@@ -13,8 +13,8 @@ import { formatSearch } from '@/utils/formatSearch';
 import { loginAsync } from '../../stores/user.action';
 
 const initialValues: LoginParams = {
-  username: 'guest',
-  password: 'guest',
+  email: 'admin@gmail.com',
+  password: 'admin123',
   // remember: true
 };
 
@@ -25,14 +25,11 @@ const LoginForm: FC = () => {
   const { formatMessage } = useLocale();
 
   const onFinished = async (form: LoginParams) => {
-    const res = await dispatch(loginAsync(form));
+    const res: any = await dispatch(loginAsync(form));
 
     console.log(res, 'res');
 
-    if (
-      // !!res
-      true // remove when api is ready
-    ) {
+    if (res) {
       const search = formatSearch(location.search);
       const from = search.from || { pathname: '/' };
 
@@ -45,7 +42,7 @@ const LoginForm: FC = () => {
       <Form<LoginParams> onFinish={onFinished} className="login-page-form" initialValues={initialValues}>
         <h2>Al Ahly club admin panel</h2>
         <Form.Item
-          name="username"
+          name="email"
           rules={[
             {
               required: true,

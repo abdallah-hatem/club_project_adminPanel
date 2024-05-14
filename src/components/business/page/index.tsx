@@ -87,18 +87,18 @@ const BasePage = <S extends SearchApi>(props: PageProps<S>, ref: React.Ref<RefPa
         const obj = {
           ...params,
           ...pageParams,
-          pageSize: pageData.pageSize,
-          pageNum: pageData.pageNum,
+          // pageSize: pageData.pageSize,
+          // pageNum: pageData.pageNum,
           [asideKey!]: asideCheckedKey,
         };
-        const res: any = await pageApi(obj);
+        let res: any = await pageApi(obj);
         // const result = await pageApi(obj);
 
-        // res = {
-        //   result: {
-        //     data: res.result ? res.result : res,
-        //   },
-        // };
+        res = {
+          result: {
+            data: res.result ? res.result : res,
+          },
+        };
 
         setPageData({ total: res.result.total, data: res.result.data });
 
