@@ -78,7 +78,11 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
       {device !== 'MOBILE' && (
         <div className="logo" style={{ width: collapsed ? 80 : 200 }}>
           {/* <img src={ReactSvg} alt="" style={{ marginRight: collapsed ? '2px' : '20px' }} /> */}
-          <img src={'https://www.alahlyegypt.com/assets/images/new-logo.png'} style={{ height: 50 }} alt="" />
+          <img
+            src={'https://seeklogo.com/images/N/new-radiant-sc-logo-1C47B40595-seeklogo.com.png'}
+            style={{ height: 50 }}
+            alt=""
+          />
         </div>
       )}
       <div className="layout-page-header-main">

@@ -56,7 +56,7 @@ const LoginForm: FC = () => {
   return (
     <div className="login-page">
       <Form<LoginParams> onFinish={onFinished} className="login-page-form" initialValues={initialValues}>
-        <h2>Al Ahly club admin panel</h2>
+        <h2>Sport hub admin panel</h2>
         <Form.Item
           name="email"
           rules={[
