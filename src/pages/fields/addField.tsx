@@ -1,7 +1,7 @@
 import { Form, message } from 'antd';
 import { useEffect, useState } from 'react';
 
-import GET_ACTIVITIES from '@/api/activities';
+import { GET_ACTIVITIES } from '@/api/activities';
 import { ADD_FIELD } from '@/api/fields';
 import MyButton from '@/components/basic/button';
 import MyForm from '@/components/core/form';

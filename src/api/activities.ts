@@ -1,7 +1,7 @@
 import { ApiBaseUrl, request } from './request';
 
 // Get activities
-export default (params?: any) => request<any>('get', `${ApiBaseUrl}/activity`, params);
+export const GET_ACTIVITIES = (params?: any) => request<any>('get', `${ApiBaseUrl}/activity`, params);
 
 // Get activities by id
 export const GET_ACTIVITIES_BY_ID = (id: string, params?: any) =>

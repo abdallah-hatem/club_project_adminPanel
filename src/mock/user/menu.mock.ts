@@ -93,9 +93,150 @@ const mockMenuList: MenuList = [
     ],
   },
 
-  // Age
+  // contact us
+  {
+    code: 'contact-us',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Contact us',
+    },
+    icon: 'dashboard',
+    path: '/contact-us',
+    children: [
+      {
+        code: 'contact-us',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'contact us',
+        },
+        path: '/contact-us',
+      },
+      // {
+      //   code: 'add',
+      //   label: {
+      //     zh_CN: '路由权限',
+      //     en_US: 'add',
+      //   },
+      //   path: '/contact-us/add',
+      // },
+    ],
+  },
 
-  // Package
+  // faqs
+  {
+    code: 'faqs',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Faqs',
+    },
+    icon: 'dashboard',
+    path: '/faqs',
+    children: [
+      {
+        code: 'faqs',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'faqs',
+        },
+        path: '/faqs',
+      },
+      {
+        code: 'add',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'add faq',
+        },
+        path: '/faqs/add',
+      },
+    ],
+  },
+
+  // coaches
+  {
+    code: 'coaches',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Coaches',
+    },
+    icon: 'dashboard',
+    path: '/coaches',
+    children: [
+      {
+        code: 'coaches',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'coaches',
+        },
+        path: '/coaches',
+      },
+      {
+        code: 'add',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'add coach',
+        },
+        path: '/coaches/add',
+      },
+    ],
+  },
+
+  // sports
+  {
+    code: 'sports',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Sports',
+    },
+    icon: 'dashboard',
+    path: '/sports',
+    children: [
+      {
+        code: 'sports',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'sports',
+        },
+        path: '/sports',
+      },
+      {
+        code: 'add',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'add sport',
+        },
+        path: '/sports/add',
+      },
+    ],
+  },
+
+  // practices
+  {
+    code: 'practices',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Practices',
+    },
+    icon: 'dashboard',
+    path: '/practices',
+    children: [
+      {
+        code: 'practices',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'practices',
+        },
+        path: '/practices',
+      },
+      {
+        code: 'add',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'add practice',
+        },
+        path: '/practices/add',
+      },
+    ],
+  },
 
   // Admin
 ];

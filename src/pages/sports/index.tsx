@@ -4,33 +4,29 @@ import { message, Space } from 'antd';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { DELETE_ACTIVITY, GET_ACTIVITIES } from '@/api/activities';
+import { DELETE_SPORT, GET_SPORTS } from '@/api/sport';
 import MyButton from '@/components/basic/button';
 import MyPage from '@/components/business/page';
 
-export default function Activities() {
+export default function Sports() {
   const [action, setAction] = useState<boolean>(false);
 
   const router = useNavigate();
 
   const tableColums: MyPageTableOptions<any> = [
-    { title: 'Name', dataIndex: 'name', key: 'id' },
+    { title: 'Sport name', dataIndex: 'name', key: 'id' },
     {
       title: 'Action',
       key: 'action',
       render: (_, record) => (
         <Space size="middle">
-          <MyButton
-            style={{ color: 'blue' }}
-            type="text"
-            onClick={() => router(`/activities/updateActivity/${record.id}`)}
-          >
+          <MyButton style={{ color: 'blue' }} type="text" onClick={() => router(`/sport/update/${record.id}`)}>
             update
           </MyButton>
           <MyButton
             type="text"
             onClick={() => {
-              DELETE_ACTIVITY(record.id);
+              DELETE_SPORT(record.id);
               setAction(prev => !prev);
               message.success('Deleted successfully');
             }}
@@ -45,7 +41,7 @@ export default function Activities() {
 
   return (
     <MyPage
-      pageApi={GET_ACTIVITIES}
+      pageApi={GET_SPORTS}
       // onRowClick={(record: any) => router(`/categories/updateCategory/${record.id}`)}
       action={action}
       tableOptions={tableColums}

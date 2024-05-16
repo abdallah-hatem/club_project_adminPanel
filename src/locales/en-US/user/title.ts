@@ -23,6 +23,11 @@ export const enUS_title = {
   'title.users': 'Users',
   'title.roles': 'Roles',
 
+  // contact us
+  'title.contactUs': 'Contact Us',
+  'title.addContactUs': 'Add Contact Us',
+  'title.updateContactUs': 'Update Contact Us',
+
   // fields
   'title.fields': 'Fields',
   'title.addField': 'Add Field',
@@ -31,6 +36,26 @@ export const enUS_title = {
   // Users
   'title.addUser': 'Add User',
   'title.updateUser': 'Update User',
+
+  // faqs
+  'title.faqs': 'Faqs',
+  'title.addFaq': 'Add Faq',
+  'title.updateFaq': 'Update Faq',
+
+  // coaches
+  'title.coaches': 'Coaches',
+  'title.addCoach': 'Add Coach',
+  'title.updateCoach': 'Update Coach',
+
+  // sports
+  'title.sports': 'Sports',
+  'title.addSport': 'Add Sport',
+  'title.updateSport': 'Update Sport',
+
+  // practices
+  'title.practices': 'Practices',
+  'title.addPractice': 'Add Practice',
+  'title.updatePractice': 'Update Practice',
 
   // /////
   'title.documentation': 'Documentation',
