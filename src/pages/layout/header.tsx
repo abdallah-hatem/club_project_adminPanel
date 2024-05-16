@@ -80,7 +80,7 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
           {/* <img src={ReactSvg} alt="" style={{ marginRight: collapsed ? '2px' : '20px' }} /> */}
           <img
             src={'https://seeklogo.com/images/N/new-radiant-sc-logo-1C47B40595-seeklogo.com.png'}
-            style={{ height: 50 }}
+            style={{ height: 50, width: 50 }}
             alt=""
           />
         </div>
