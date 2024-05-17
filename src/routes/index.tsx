@@ -164,10 +164,10 @@ const routeList: RouteObject[] = [
         path: 'practices/add',
         element: <WrapperRouteComponent element={<AddPractice />} titleId="title.addPractice" auth />,
       },
-      {
-        path: 'practice/update/:id',
-        element: <WrapperRouteComponent element={<UpdatePractice />} titleId="title.updatePractice" auth />,
-      },
+      // {
+      //   path: 'practice/update/:id',
+      //   element: <WrapperRouteComponent element={<UpdatePractice />} titleId="title.updatePractice" auth />,
+      // },
 
       ///////////////// NotFound //////////////////
       {

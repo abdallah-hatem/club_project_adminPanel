@@ -31,9 +31,9 @@ export default function Practices() {
       key: 'action',
       render: (_, record) => (
         <Space size="middle">
-          <MyButton style={{ color: 'blue' }} type="text" onClick={() => router(`/practice/update/${record.id}`)}>
+          {/* <MyButton style={{ color: 'blue' }} type="text" onClick={() => router(`/practice/update/${record.id}`)}>
             update
-          </MyButton>
+          </MyButton> */}
           <MyButton
             type="text"
             onClick={() => {
