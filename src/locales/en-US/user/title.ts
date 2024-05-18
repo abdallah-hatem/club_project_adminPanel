@@ -57,6 +57,16 @@ export const enUS_title = {
   'title.addPractice': 'Add Practice',
   'title.updatePractice': 'Update Practice',
 
+  // events
+  'title.events': 'Events',
+  'title.addEvent': 'Add Event',
+  'title.updateEvent': 'Update Event',
+
+  // News
+  'title.news': 'News',
+  'title.addNews': 'Add News',
+  'title.updateNews': 'Update News',
+
   // /////
   'title.documentation': 'Documentation',
   'title.guide': 'Guide',

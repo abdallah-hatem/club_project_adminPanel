@@ -16,6 +16,9 @@ import Coaches from '@/pages/coaches';
 import AddCoach from '@/pages/coaches/addCoach';
 import UpdateCoach from '@/pages/coaches/updateCoach';
 import ContactUs from '@/pages/contact-us';
+import Events from '@/pages/events';
+import AddEvent from '@/pages/events/addEvent';
+import UpdateEvent from '@/pages/events/updateEvent';
 import Faqs from '@/pages/faqs';
 import AddFaq from '@/pages/faqs/addFaq';
 import UpdateFaq from '@/pages/faqs/updateFaq';
@@ -24,9 +27,12 @@ import AddField from '@/pages/fields/addField';
 import UpdateField from '@/pages/fields/updateField';
 import LayoutPage from '@/pages/layout';
 import LoginPage from '@/pages/login';
+import News from '@/pages/news';
+import AddNews from '@/pages/news/addNews';
+import UpdateNews from '@/pages/news/updateNews';
 import Practices from '@/pages/practice';
 import AddPractice from '@/pages/practice/addPractice';
-import UpdatePractice from '@/pages/practice/updatePractice';
+// import UpdatePractice from '@/pages/practice/updatePractice';
 import Sports from '@/pages/sports';
 import AddSport from '@/pages/sports/addSport';
 import UpdateSport from '@/pages/sports/updateSport';
@@ -168,6 +174,36 @@ const routeList: RouteObject[] = [
       //   path: 'practice/update/:id',
       //   element: <WrapperRouteComponent element={<UpdatePractice />} titleId="title.updatePractice" auth />,
       // },
+
+      ///////////////// Events //////////////////
+
+      {
+        path: 'events',
+        element: <WrapperRouteComponent element={<Events />} titleId="title.events" auth />,
+      },
+      {
+        path: 'events/add',
+        element: <WrapperRouteComponent element={<AddEvent />} titleId="title.addEvent" auth />,
+      },
+      {
+        path: 'event/update/:id',
+        element: <WrapperRouteComponent element={<UpdateEvent />} titleId="title.updateEvent" auth />,
+      },
+
+      ///////////////// News //////////////////
+
+      {
+        path: 'news',
+        element: <WrapperRouteComponent element={<News />} titleId="title.news" auth />,
+      },
+      {
+        path: 'news/add',
+        element: <WrapperRouteComponent element={<AddNews />} titleId="title.addNews" auth />,
+      },
+      {
+        path: 'news/update/:id',
+        element: <WrapperRouteComponent element={<UpdateNews />} titleId="title.updateNews" auth />,
+      },
 
       ///////////////// NotFound //////////////////
       {

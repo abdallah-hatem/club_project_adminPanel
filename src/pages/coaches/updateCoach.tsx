@@ -23,7 +23,11 @@ export default function UpdateCoach() {
   };
 
   const onFinish = (value: any) => {
-    UPDATE_COACH(Number(id), value).then(() => {
+    UPDATE_COACH(Number(id), {
+      ...value,
+      age: Number(value.age),
+      years_of_experience: Number(value.years_of_experience),
+    }).then(() => {
       message.success('Updated successfully');
       router('/coaches');
     });
@@ -33,6 +37,24 @@ export default function UpdateCoach() {
     data && (
       <MyForm<any> onFinish={onFinish} layout="horizontal" form={form} labelCol={{ span: 3 }} labelAlign="left">
         <MyForm.Item label="Coach name" required name="name" type="input" initialValue={data?.name} />
+
+        <MyForm.Item
+          label="Age"
+          required
+          name="age"
+          type="input"
+          innerProps={{ type: 'number' }}
+          initialValue={data?.age}
+        />
+        <MyForm.Item
+          label="Years of experience"
+          required
+          name="years_of_experience"
+          type="input"
+          innerProps={{ type: 'number' }}
+          initialValue={data?.years_of_experience}
+        />
+        <MyForm.Item label="Brief" required name="brief" type="textarea" initialValue={data?.brief} />
 
         <MyForm.Item {...tailLayout}>
           <MyButton type="primary" htmlType="submit">

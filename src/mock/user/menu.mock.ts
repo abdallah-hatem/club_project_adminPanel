@@ -238,6 +238,64 @@ const mockMenuList: MenuList = [
     ],
   },
 
+  // Events
+  {
+    code: 'events',
+    label: {
+      zh_CN: '首页',
+      en_US: 'Events',
+    },
+    icon: 'dashboard',
+    path: '/events',
+    children: [
+      {
+        code: 'events',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'events',
+        },
+        path: '/events',
+      },
+      {
+        code: 'add',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'add event',
+        },
+        path: '/events/add',
+      },
+    ],
+  },
+
+  // News
+  {
+    code: 'news',
+    label: {
+      zh_CN: '首页',
+      en_US: 'News',
+    },
+    icon: 'dashboard',
+    path: '/news',
+    children: [
+      {
+        code: 'news',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'news',
+        },
+        path: '/news',
+      },
+      {
+        code: 'add',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'add news',
+        },
+        path: '/news/add',
+      },
+    ],
+  },
+
   // Admin
 ];
 
