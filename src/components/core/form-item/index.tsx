@@ -100,7 +100,7 @@ const MyformItem: FC<MyFormItemProps> = props => {
     // 如果设置了 required 属性
     if (required) {
       if (typeof required === 'boolean') {
-        return [{ required: true, message: `请输入${props.label}` }];
+        return [{ required: true, message: `Please enter: ${props.label}` }];
       }
       // 自定义 required 文案
       else if (typeof required === 'string') {
