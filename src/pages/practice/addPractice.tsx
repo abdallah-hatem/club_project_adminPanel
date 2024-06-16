@@ -66,6 +66,9 @@ export default function AddPractice() {
         type="select"
         options={times?.map((item: any) => ({ label: item, value: item }))}
       />
+
+      <MyForm.Item label="Deadline" required name="deadline" type="date-picker" />
+
       <MyForm.Item
         label="Days"
         required

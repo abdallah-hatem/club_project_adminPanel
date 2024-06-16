@@ -48,12 +48,5 @@ export default function Users() {
     },
   ];
 
-  return (
-    <MyPage
-      pageApi={GET_USERS}
-      // onRowClick={(record: any) => router(`/categories/updateCategory/${record.id}`)}
-      action={action}
-      tableOptions={tableColums}
-    ></MyPage>
-  );
+  return <MyPage pageApi={GET_USERS} action={action} tableOptions={tableColums}></MyPage>;
 }

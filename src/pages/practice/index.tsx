@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { DELETE_PRACTICE, GET_PRACTICES } from '@/api/practice';
 import MyButton from '@/components/basic/button';
 import MyPage from '@/components/business/page';
+import { formatDate } from '@/helpers/date';
 
 export default function Practices() {
   const [action, setAction] = useState<boolean>(false);
@@ -25,6 +26,12 @@ export default function Practices() {
       render: (val: any) => val.split(',').map((item: any) => <Tag>{item}</Tag>),
     },
     { title: 'Price', dataIndex: 'price', key: 'id' },
+    {
+      title: 'Deadline',
+      dataIndex: 'deadline',
+      key: 'id',
+      render: (val: any) => formatDate(val),
+    },
 
     {
       title: 'Action',

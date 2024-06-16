@@ -58,12 +58,5 @@ export default function News() {
     },
   ];
 
-  return (
-    <MyPage
-      pageApi={GET_NEWS}
-      // onRowClick={(record: any) => router(`/categories/updateCategory/${record.id}`)}
-      action={action}
-      tableOptions={tableColums}
-    ></MyPage>
-  );
+  return <MyPage pageApi={GET_NEWS} action={action} tableOptions={tableColums}></MyPage>;
 }

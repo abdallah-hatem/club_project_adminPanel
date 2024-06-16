@@ -100,6 +100,8 @@ const BasePage = <S extends SearchApi>(props: PageProps<S>, ref: React.Ref<RefPa
           },
         };
 
+        console.log(res, 'resss');
+
         setPageData({ total: res.result.total, data: res.result.data });
 
         // if (res.status) {
