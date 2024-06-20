@@ -11,7 +11,7 @@ const initialState: UserState = {
   noticeCount: 0,
   locale: (localStorage.getItem('locale')! || 'en_US') as Locale,
   newUser: JSON.parse(localStorage.getItem('newUser')!) ?? true,
-  logged: localStorage.getItem('t') ? true : false,
+  logged: localStorage.getItem('token') ? true : false,
   menuList: [],
   username: localStorage.getItem('username') || '',
   role: (localStorage.getItem('username') || '') as Role,

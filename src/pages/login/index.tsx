@@ -28,8 +28,8 @@ const LoginForm: FC = () => {
   const onFinished = async (form: LoginParams) => {
     const { email, password } = form;
 
-    if (email === 'admin@gmail.com' && password === 'admin') {
-      localStorage.setItem('t', 'tokennnnn');
+    if (email === 'admin2002@gmail.com' && password === 'mahmoud2002') {
+      localStorage.setItem('token', 'tokennnnn');
       dispatch(
         setUserItem({
           logged: true,
@@ -68,7 +68,7 @@ const LoginForm: FC = () => {
             },
           ]}
         >
-          <Input placeholder="admin@gmail.com" />
+          <Input placeholder="Email" />
         </Form.Item>
         <Form.Item
           name="password"
@@ -81,7 +81,7 @@ const LoginForm: FC = () => {
             },
           ]}
         >
-          <Input type="password" placeholder="admin" />
+          <Input type="password" placeholder="Password" />
         </Form.Item>
         <Form.Item name="remember" valuePropName="checked">
           <Checkbox>

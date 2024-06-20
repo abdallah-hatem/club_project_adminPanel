@@ -34,7 +34,7 @@ export const loginAsync = createAsyncAction<LoginParams, boolean>(payload => {
 
 export const logoutAsync = () => {
   return async (dispatch: Dispatch) => {
-    const { status } = await apiLogout({ token: localStorage.getItem('t')! });
+    const { status } = await apiLogout({ token: localStorage.getItem('token')! });
 
     if (status) {
       localStorage.clear();

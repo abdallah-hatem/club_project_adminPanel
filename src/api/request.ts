@@ -104,7 +104,7 @@ export const request = <T = any>(
 
   const configPost = {
     headers: {
-      // Authorization: `Bearer ${localStorage.getItem('t')}`,
+      // Authorization: `Bearer ${localStorage.getItem('token')}`,
       // Authorization: `Bearer R0cPofvtAKGRcxPLtX1SJHHujijbfXRXgb03E-bm7zE`,
     },
     ...config,
