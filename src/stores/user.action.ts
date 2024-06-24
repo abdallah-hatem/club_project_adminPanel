@@ -11,7 +11,7 @@ export const loginAsync = createAsyncAction<LoginParams, boolean>(payload => {
   return async dispatch => {
     const { jwt, user } = await apiLogin(payload);
 
-    console.log(jwt, 'sdsddsds');
+    // console.log(jwt, 'sdsddsds');
 
     if (jwt && user.role === 'ADMIN') {
       localStorage.setItem('t', jwt);
